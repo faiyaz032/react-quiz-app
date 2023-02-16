@@ -1,11 +1,6 @@
-import { Link } from 'react-router-dom';
 import image from '../../assets/images/signup.svg';
-import Button from '../../components/Button/Button';
-import Checkbox from '../../components/Checkbox/Checkbox';
-import Form from '../../components/Form/Form';
 import Illustration from '../../components/Illustration/Illustration';
-import TextInput from '../../components/TextInput/TextInput';
-import classes from './Signup.module.css';
+import SignupForm from '../../components/SignupForm/SignupForm';
 
 export default function Signup() {
   return (
@@ -14,20 +9,7 @@ export default function Signup() {
       <div className="column">
         <Illustration image={image} />
 
-        <Form className={classes.signup}>
-          <TextInput type="text" placeholder="Enter Name" iconText="person" />
-          <TextInput type="text" placeholder="Enter Email" iconText="alternate_email" />
-          <TextInput type="password" placeholder="Enter Name" iconText="lock" />
-          <TextInput type="password" placeholder="Enter Name" iconText="lock_clock" />
-
-          <Checkbox text="I agree to the Terms & Conditions" />
-
-          <Button text="Submit" />
-
-          <div className="info">
-            Already have an account? <Link to="/login">Login</Link> instead.
-          </div>
-        </Form>
+        <SignupForm />
       </div>
     </>
   );
