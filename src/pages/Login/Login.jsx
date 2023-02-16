@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import image from '../../assets/images/login.svg';
 import Button from '../../components/Button/Button';
 import Form from '../../components/Form/Form';
@@ -19,7 +20,7 @@ export default function Login() {
           <Button text="Login" />
 
           <div className="info">
-            Don't have an account? <a href="login.html">Signup</a> instead.
+            Don't have an account? <Link to="/signup">Signup</Link> instead.
           </div>
         </Form>
       </div>

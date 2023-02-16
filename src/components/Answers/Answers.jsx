@@ -5,16 +5,7 @@ import classes from './Answers.module.css';
 function Answers() {
   return (
     <div className={classes.answers}>
-      <Answer id={'option1'} answerText="THe First Answer" isCorrect={true} />
-      <Answer />
-      <Answer />
-      <Answer />
-      <Answer />
-      <Answer />
-      <Answer />
-      <Answer />
-      <Answer />
-      <Answer />
+      <Answer id={'option1'} answerText="A New Hope" />
     </div>
   );
 }
