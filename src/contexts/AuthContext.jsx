@@ -21,22 +21,28 @@ export function AuthProvider({ children }) {
 
   useEffect(() => {
     const auth = getAuth();
+
     const unsubscribe = onAuthStateChanged(auth, user => {
       setCurrentUser(user);
       setLoading(false);
     });
+
     return unsubscribe;
   }, []);
 
   const signup = async (email, password, username) => {
-    const auth = getAuth();
-    await createUserWithEmailAndPassword(auth, email, password);
+    try {
+      const auth = getAuth();
+      await createUserWithEmailAndPassword(auth, email, password);
 
-    //update profile
-    await updateProfile(auth.currentUser, { displayName: username });
+      //update profile
+      await updateProfile(auth.currentUser, { displayName: username });
 
-    const user = auth.currentUser;
-    setCurrentUser({ ...user });
+      const user = auth.currentUser;
+      setCurrentUser({ ...user });
+    } catch (error) {
+      console.log('🚀 ~ file: AuthContext.jsx:44 ~ signup ~ error', error);
+    }
   };
 
   const login = async (email, password) => {

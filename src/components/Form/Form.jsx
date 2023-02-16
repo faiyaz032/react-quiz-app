@@ -1,10 +1,9 @@
-import React from 'react';
 import classes from './Form.module.css';
 
-export default function Form({ className, children }) {
+export default function Form({ ...rest }) {
   return (
-    <form className={`${className} ${classes.form}`} action="#">
-      {children}
+    <form className={`${classes.form}`} {...rest} action="#">
+      {...rest.children}
     </form>
   );
 }
